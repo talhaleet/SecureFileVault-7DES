@@ -2,10 +2,7 @@
 
 'use strict';
 
-// Set your backend URL here.
-// For local development: 'http://localhost:8000'
-// After deploying backend, replace with your deployed backend URL.
-const API_BASE = 'http://localhost:8000';
+// API_BASE is loaded from config.js
 
 /* -- Utility: format bytes -- */
 function formatBytes(bytes) {
