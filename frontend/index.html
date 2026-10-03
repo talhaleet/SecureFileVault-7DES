@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DES-7 File Encryption and Decryption</title>
+  <meta name="description" content="Encrypt and decrypt files using the 7-round DES algorithm." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main>
+    <h1>DES-7 File Encrypt / Decrypt</h1>
+
+    <!-- Tab Buttons -->
+    <div class="tabs">
+      <button class="tab-btn active" id="encryptTab" onclick="switchTab('encrypt')">Encrypt</button>
+      <button class="tab-btn" id="decryptTab" onclick="switchTab('decrypt')">Decrypt</button>
+    </div>
+
+    <!-- Encrypt Section -->
+    <section id="encrypt-section" class="panel">
+      <form id="encryptForm">
+        <div class="form-group">
+          <label for="encryptFile">Select File</label>
+          <input type="file" id="encryptFile" />
+        </div>
+
+        <div class="form-group">
+          <label for="encryptKey">Encryption Key (16 hex characters)</label>
+          <input type="text" id="encryptKey" placeholder="e.g. 0123456789ABCDEF" maxlength="16" />
+        </div>
+
+        <button type="submit" class="btn" id="encryptSubmit">Encrypt and Download</button>
+      </form>
+
+      <div class="result success" id="encryptResult" hidden>
+        <p><strong>Encrypted successfully.</strong></p>
+        <p id="encryptResultDetail"></p>
+        <button class="btn" id="encryptDownloadBtn">Download Again</button>
+      </div>
+
+      <div class="result error" id="encryptError" hidden>
+        <p><strong>Encryption Failed</strong></p>
+        <p id="encryptErrorDetail"></p>
+      </div>
+    </section>
+
+    <!-- Decrypt Section -->
+    <section id="decrypt-section" class="panel" hidden>
+      <form id="decryptForm">
+        <div class="form-group">
+          <label for="decryptFile">Select .des7 File</label>
+          <input type="file" id="decryptFile" accept=".des7" />
+        </div>
+
+        <div class="form-group">
+          <label for="decryptKey">Decryption Key (16 hex characters)</label>
+          <input type="text" id="decryptKey" placeholder="Enter the key used during encryption" maxlength="16" />
+        </div>
+
+        <button type="submit" class="btn" id="decryptSubmit">Decrypt and Download</button>
+      </form>
+
+      <div class="result success" id="decryptResult" hidden>
+        <p><strong>Decrypted successfully.</strong></p>
+        <p id="decryptResultDetail"></p>
+        <button class="btn" id="decryptDownloadBtn">Download Again</button>
+      </div>
+
+      <div class="result error" id="decryptError" hidden>
+        <p><strong>Decryption Failed</strong></p>
+        <p id="decryptErrorDetail"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
