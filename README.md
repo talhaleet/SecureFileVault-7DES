@@ -88,7 +88,7 @@ Encrypt-Decrypt/
 2. Click **Encrypt and Download** to encrypt the file. A `.des7` file is downloaded.
 3. To decrypt, switch to the Decrypt tab, upload the `.des7` file, enter the same key, and click **Decrypt and Download**.
 
-## Algorithm
+## Algorithms
 
 - 7-round DES (Data Encryption Standard) with ECB mode
 - PKCS#7 padding for block alignment
